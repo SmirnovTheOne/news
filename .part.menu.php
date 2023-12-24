@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Журналы", 
+		"/zhurnaly/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Рецепты", 
+		"/recept/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

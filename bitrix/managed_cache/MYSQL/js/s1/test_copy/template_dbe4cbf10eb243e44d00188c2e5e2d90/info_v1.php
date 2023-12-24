@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/bitrix/templates/test_copy/components/bitrix/system.auth.form/auth/script.js" => "1701876017324",]; ?>

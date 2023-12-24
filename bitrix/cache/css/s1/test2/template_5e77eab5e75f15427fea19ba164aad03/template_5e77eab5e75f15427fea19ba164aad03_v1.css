@@ -1,0 +1,247 @@
+
+
+/* Start:/bitrix/templates/test2/components/bitrix/system.auth.form/auth/style.css?1701782847343*/
+#login-form-window {
+    display: none;
+    border: 1px solid #000;
+    background: #F5F5ED;
+    padding: 10px;
+    z-index: 10000;
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    width: 200px;
+    color: #454545;
+}
+
+#login-info {
+    color: #3B3B3B;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+#login-info a {
+    color: #666666;
+}
+/* End */
+
+
+/* Start:/local/templates/.default/components/bitrix/menu/template1/style.css?1701848752809*/
+/* Left menu*/
+.left-menu {
+    /*list-style: none;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*margin-bottom: 8px;*/
+    /*position: relative; !*IE bug*!*/
+
+    font-size: 80%;
+    color: #666666;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*left-menu li {*/
+/*    padding: 10px 16px;*/
+/*    background: #F5F5F5 url(/local/templates/.default/components/bitrix/menu/template1/images/left_menu_bg.gif) top repeat-x;*/
+/*}*/
+
+/*left-menu li a {*/
+/*    font-size: 100%;*/
+/*    color: #BC262C;*/
+/*    font-weight: bold;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*left-menu li a:visited {*/
+/*    color: #BC262C;*/
+/*}*/
+
+/*left-menu li a:hover {*/
+/*    color: #BC262C;*/
+/*}*/
+
+
+/*left-menu li a.selected:link,*/
+/*left-menu li a.selected:visited,*/
+/*left-menu li a.selected:active,*/
+/*left-menu li a.selected:hover {*/
+/*    color: #FC8D3D;*/
+/*}*/
+
+
+
+
+/* End */
+
+
+/* Start:/local/templates/.default/components/bitrix/menu/template3/style.css?1701866117779*/
+/* Left menu*/
+.part-menu {
+    font-size: 80%;
+    color: #666666;
+    font-weight: bold;
+    text-decoration: none;
+
+    /*list-style:none;*/
+    /*margin:0; padding:0;*/
+    /*margin-bottom:8px;*/
+    /*position: relative;*/
+}
+
+/*.left-menu li*/
+/*{*/
+/*	padding: 10px 16px;*/
+/*	background:#F5F5F5 url(/local/templates/.default/components/bitrix/menu/template3/images/left_menu_bg.gif) top repeat-x;*/
+/*}*/
+
+/*.left-menu li a*/
+/*{*/
+/*	font-size:100%;*/
+/*	color:#BC262C;*/
+/*	font-weight:bold;*/
+/*	text-decoration:none;*/
+/*}*/
+
+/*.left-menu li a:visited*/
+/*{*/
+/*	color:#BC262C;*/
+/*}*/
+
+/*.left-menu li a:hover*/
+/*{*/
+/*	color:#BC262C;*/
+/*}*/
+
+
+/*.left-menu li a.selected:link,*/
+/*.left-menu li a.selected:visited,*/
+/*.left-menu li a.selected:active,*/
+/*.left-menu li a.selected:hover*/
+/*{*/
+/*	color:#FC8D3D;*/
+/*}*/
+
+
+
+
+/* End */
+
+
+/* Start:/local/templates/.default/components/bitrix/breadcrumb/template1/style.css?1701871232825*/
+.bx-breadcrumb {
+    margin: 10px 0;
+}
+
+.bx-breadcrumb i {
+    /*color: #b5bdc2;*/
+    /*line-height: 13px;*/
+    /*font-size: 12px;*/
+    /*vertical-align: middle;*/
+    /*margin-right: 5px;*/
+
+    font-size: 80%;
+    color: #666666;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*.bx-breadcrumb .bx-breadcrumb-item {*/
+/*    float: left;*/
+/*    margin-bottom: 10px;*/
+/*    white-space: nowrap;*/
+/*    line-height: 13px;*/
+/*    vertical-align: middle;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.bx-breadcrumb .bx-breadcrumb-item span {*/
+/*    font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;*/
+/*    font-size: 13px;*/
+/*    white-space: normal;*/
+/*}*/
+
+/*.bx-breadcrumb .bx-breadcrumb-item a {*/
+/*    border-bottom: none;*/
+/*}*/
+
+/*.bx-breadcrumb .bx-breadcrumb-item a:hover {*/
+/*}*/
+
+/* End */
+
+
+/* Start:/local/templates/.default/components/bitrix/menu/template2/style.css?1701858823779*/
+/* Left menu*/
+.down-menu {
+    font-size: 80%;
+    color: #666666;
+    font-weight: bold;
+    text-decoration: none;
+
+    /*list-style:none;*/
+    /*margin:0; padding:0;*/
+    /*margin-bottom:8px;*/
+    /*position: relative;*/
+}
+
+/*.left-menu li*/
+/*{*/
+/*	padding: 10px 16px;*/
+/*	background:#F5F5F5 url(/local/templates/.default/components/bitrix/menu/template2/images/left_menu_bg.gif) top repeat-x;*/
+/*}*/
+
+/*.left-menu li a*/
+/*{*/
+/*	font-size:100%;*/
+/*	color:#BC262C;*/
+/*	font-weight:bold;*/
+/*	text-decoration:none;*/
+/*}*/
+
+/*.left-menu li a:visited*/
+/*{*/
+/*	color:#BC262C;*/
+/*}*/
+
+/*.left-menu li a:hover*/
+/*{*/
+/*	color:#BC262C;*/
+/*}*/
+
+
+/*.left-menu li a.selected:link,*/
+/*.left-menu li a.selected:visited,*/
+/*.left-menu li a.selected:active,*/
+/*.left-menu li a.selected:hover*/
+/*{*/
+/*	color:#FC8D3D;*/
+/*}*/
+
+
+
+
+/* End */
+
+
+/* Start:/bitrix/templates/test2/template_styles.css?1701875766218*/
+.br {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  text-decoration: none;
+}
+body {
+  font-family: arial;
+  text-decoration: none;
+}
+
+/* End */
+/* /bitrix/templates/test2/components/bitrix/system.auth.form/auth/style.css?1701782847343 */
+/* /local/templates/.default/components/bitrix/menu/template1/style.css?1701848752809 */
+/* /local/templates/.default/components/bitrix/menu/template3/style.css?1701866117779 */
+/* /local/templates/.default/components/bitrix/breadcrumb/template1/style.css?1701871232825 */
+/* /local/templates/.default/components/bitrix/menu/template2/style.css?1701858823779 */
+/* /bitrix/templates/test2/template_styles.css?1701875766218 */

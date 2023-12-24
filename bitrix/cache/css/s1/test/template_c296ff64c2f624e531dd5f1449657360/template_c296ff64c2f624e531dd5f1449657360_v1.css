@@ -1,0 +1,18 @@
+
+
+/* Start:/bitrix/templates/test/template_styles.css?1701771208218*/
+.br {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  text-decoration: none;
+}
+body {
+  font-family: arial;
+  text-decoration: none;
+}
+
+/* End */
+/* /bitrix/templates/test/template_styles.css?1701771208218 */

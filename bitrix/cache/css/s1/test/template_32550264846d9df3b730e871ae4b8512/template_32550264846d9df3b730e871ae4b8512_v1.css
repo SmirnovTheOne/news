@@ -1,0 +1,36 @@
+
+
+/* Start:/bitrix/templates/test/components/bitrix/system.auth.form/auth/style.css?1190806508185*/
+#login-form-window
+{
+	display:none;
+	border:1px solid #000;
+	background:#F5F5ED;
+	padding:10px;
+	z-index:10000;
+	position:absolute;
+	top:10%;
+	left:45%;
+	width:200px;
+	color: #454545;
+}
+/* End */
+
+
+/* Start:/bitrix/templates/test/template_styles.css?1701779514218*/
+.br {
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  text-decoration: none;
+}
+body {
+  font-family: arial;
+  text-decoration: none;
+}
+
+/* End */
+/* /bitrix/templates/test/components/bitrix/system.auth.form/auth/style.css?1190806508185 */
+/* /bitrix/templates/test/template_styles.css?1701779514218 */
