@@ -9,14 +9,14 @@ echo '</pre>';
             <div class="col-12 py-2">
                 <div class="text-large px-2 fw-bold">НАЗВАНИЕ РАЗДЕЛА</div>
             </div>
-            <form class="form-horizontal" role="form" method="POST" id="form-detail-sect">
+            <form class="form-horizontal" role="form" method="POST" id="form">
                 <div class="form-group row">
                     <label class="col-2 col-form-label">Заголовок раздела</label>
                     <?php
                     foreach ($arResult['SECT'] as $section) :?>
                         <div class="col-10">
                             <input type="text" class="form-control" placeholder="Введите название заголовка"
-                                   name="name" value="<?= $section["NAME"] ?>" id="input">
+                                   name="name" value="<?= $section["NAME"] ?>" disabled readonly>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -26,12 +26,12 @@ echo '</pre>';
                         <a class="btn btn-primary text-decoration-none" href="/news/">Главная</a>
                     </div>
                     <div class="d-flex gap-3">
-                        <button type="submit" class="btn btn-primary text-decoration-none">
+                        <button type="submit" class="btn btn-primary text-decoration-none" id="btn-save">
                             Сохранить
                         </button>
-                        <button class="btn btn-primary text-decoration-none" id="btn-edit">
+                        <a class="btn btn-primary text-decoration-none" id="btn-edit">
                             Редактировать
-                        </button>
+                        </a>
                         <a class="btn btn-primary text-decoration-none"
                            href="/news/detail-sect/?type=delSect&id=<?= $section['ID'] ?>">Удалить</a>
                     </div>

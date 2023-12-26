@@ -27,7 +27,7 @@
                                 echo '<td class=""><a class="text-decoration-none" href="/news/detail-sect/?id=' . $arSect['ID'] . '">' . $arSect['NAME'] . '</a></td>';
                             }
                             echo '<td class=""><a class="text-decoration-none" href="/news/detail-news/?id=' . $arELSect['ID'] . '">' . $arELSect['NAME'] . '</a></td>';
-                            if ($arELSect['ACTIVE_FROM'] == NULL) {
+                            if ($arELSect['ACTIVE_FROM'] == '01.01.1970') {
                                 echo '<td class="text-decoration-none">' . $arELSect['DATE_CREATE'] . '</td>';
                             } else {
                                 echo '<td class="text-decoration-none">' . $arELSect['ACTIVE_FROM'] . '</td>';
