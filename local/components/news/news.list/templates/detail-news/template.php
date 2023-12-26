@@ -4,7 +4,8 @@
 <div class="container-fluid container-xxl">
     <div class="row">
         <div class="col-12 d-flex">
-            <form class="form-horizontal w-100" role="form" method="POST" id="form-detail-sect">
+            <form class="form-horizontal w-100" role="form" method="POST" enctype="multipart/form-data"
+                  id="form-detail-sect">
                 <?php
                 foreach ($arResult['NEWS_INFO'] as $news) :?>
                     <div class="form-group row">
@@ -20,13 +21,21 @@
                         </div>
                         <div class="col-2">
                             <div class="text-large text-uppercase px-2 fw-bold py-2">Изображение</div>
-                            <input type="text" class="form-control" placeholder="Введите название заголовка"
-                                   name="detail_picture" value="<?= $news["DETAIL_PICTURE"] ?>" id="input">
+                            <?php
+                            $imgHref = CFile::GetPath($news["PREVIEW_PICTURE"]);
+                            if ($imgHref) : ?>
+                                <div class="d-flex my-2">
+                                    <img src="<?= $imgHref ?>" alt="<?= $news["PREVIEW_PICTURE"] ?>" width="200"
+                                         height="200">
+                                </div>
+                            <?php endif; ?>
+                            <input type="file" class="form-control" placeholder="Изображение"
+                                   name="image" value="<?= $news['PREVIEW_PICTURE'] ?>" id="input">
                         </div>
                         <div class="col-2">
                             <div class="text-large text-uppercase px-2 fw-bold py-2">Дата публикации</div>
-                            <input type="text" class="form-control" placeholder="Введите название заголовка"
-                                   name="date_create" value="<?= $news["DATE_CREATE"] ?>" id="input">
+                            <input type="date" class="form-control"
+                                   name="date" value="">
                         </div>
                         <div class="col-2">
                             <div class="text-large text-uppercase px-2 fw-bold py-2">Категория</div>

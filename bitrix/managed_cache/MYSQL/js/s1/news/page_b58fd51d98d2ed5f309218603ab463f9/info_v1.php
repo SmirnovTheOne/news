@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/local/components/news/news.list/templates/add-news/script.js" => "170342593229",]; ?>

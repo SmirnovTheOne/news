@@ -24,10 +24,12 @@ if (CSite::InDir('/news/index.php')) {
         "ID",
         "IBLOCK_SECTION_ID",
         "NAME",
-        "PREVIEW_TEXT",
-        "DETAIL_PICTURE",
-        "DETAIL_TEXT",
         "DATE_CREATE",
+        "ACTIVE_FROM",
+        "DATE_ACTIVE_FROM",
+        "PREVIEW_TEXT",
+        "PREVIEW_PICTURE",
+        "DETAIL_TEXT",
     );
     $arPaginator = array("nPageSize" => 50);
     $arFilter = array("IBLOCK_ID" => $IBLOCK_ID, "ACTIVE" => "Y");
@@ -37,9 +39,6 @@ if (CSite::InDir('/news/index.php')) {
         $arElem["ITEMS"][] = $el; //формально все элементы
     }
 
-//    echo '<pre>';
-//    print_r($arElem["ITEMS"]);
-//    echo '</pre>';
 
     // Находим все разделы элемента и собираем их в массив
     foreach ($arElem["ITEMS"] as $key => $arItem) {
@@ -60,7 +59,7 @@ if (CSite::InDir('/news/index.php')) {
         foreach ($arElem["ITEMS"] as $key => $arItem) {
             foreach ($arItem['SECTION'] as $key => $val) {
                 if ($val == $arSection['ID']) {
-                    $arSection['ELEMENTS'][] = $arItem;
+                    $arSection['ELEMENTS_SECT'][] = $arItem;
                 }
             }
         }
@@ -74,8 +73,8 @@ if (CSite::InDir('/news/index.php')) {
             $arResult['ELEMENT'][] = $arItem;
         }
     }
-}
 
+}
 
 // детальная страница новости
 $NEWS_ID = $arParams["NEWS_ID"];
@@ -92,18 +91,15 @@ if (isset($NEWS_ID)) {
         "ID_SECT" => $arNewsSect["ID"],
         "NAME_SECT" => $arNewsSect["NAME"],
         "DETAIL_TEXT" => $arNEWS["DETAIL_TEXT"],
-        "DETAIL_PICTURE" => $arNEWS["DETAIL_PICTURE"],
-        "DATE_CREATE" => $arNEWS["DATE_CREATE"],
+        "PREVIEW_PICTURE" => $arNEWS["PREVIEW_PICTURE"],
+        "ACTIVE_FROM" => $arNEWS["ACTIVE_FROM"],
     );
 
     $arResult['NEWS_INFO'] = $arNewsInfo;
 
     if ($_GET['type'] == 'delNews') {
-        echo $_GET['type'];
-        echo 'вы запустили удаление!';
         CIBlockElement::Delete($_GET['id']);
         LocalRedirect('/news/');
-
     }
 
     //здесь код для редактирования секции
@@ -118,21 +114,27 @@ if (isset($NEWS_ID)) {
         $arSections[] = $sectRes;
     }
     $arResult["NEWS_SECT"] = $arSections;
+
     if ($_POST) {
         $el = new CIBlockElement;
-        $PROP = array();
-        $PROP[12] = "Белый";  // свойству с кодом 12 присваиваем значение "Белый"
-        $PROP[3] = 38;        // свойству с кодом 3 присваиваем значение 38
-        $arLoadProductArray = array(
+
+        $arLoadProduct = array(
             "MODIFIED_BY" => $USER->GetID(), // элемент изменен текущим пользователем
-            "IBLOCK_SECTION" => $_POST['name_sect'],          // элемент лежит в корне раздела
-            "PROPERTY_VALUES" => $PROP,
+            "IBLOCK_SECTION" => $_POST['name_sect'], // элемент лежит в корне раздела
             "NAME" => $_POST['name'],
+            "ACTIVE_FROM" => date('d.m.Y', strtotime($_POST['date'])),
             "DETAIL_TEXT" => $_POST['detail_text'],
-            "DETAIL_PICTURE" => CFile::MakeFileArray($_SERVER["DOCUMENT_ROOT"] . "/image.gif")
+            "PREVIEW_PICTURE" => $_FILES['image'],
         );
+//        echo '<pre>';
+//        print_r($_POST);
+//        echo '</pre>';
+//        echo '<pre>';
+//        print_r($arLoadProducty);
+//        echo '</pre>';
+
         $PRODUCT_ID = $arParams["NEWS_ID"];  // изменяем элемент с кодом
-        $res = $el->Update($PRODUCT_ID, $arLoadProductArray);
+        $res = $el->Update($PRODUCT_ID, $arLoadProduct);
         $redirect = '/news/detail-news/?id=' . $arParams["NEWS_ID"];
         LocalRedirect($redirect);
     }
@@ -170,7 +172,6 @@ if (isset($SECT_ID)) {
     }
 }
 
-
 // страница добавления новости
 if (CSite::InDir('/news/add-news/')) {
 
@@ -186,28 +187,25 @@ if (CSite::InDir('/news/add-news/')) {
     }
     $arResult["SECT"] = $arSections;
 
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
-
     if ($_POST) {
         $el = new CIBlockElement;
 
         $arLoadProductArray = array(
-            "DATE_CREATE" => date("d.m.Y"),
             "MODIFIED_BY" => $USER->GetID(), // id добавляющего пользователя
             "IBLOCK_SECTION_ID" => $_POST["select"], // id разделов
             "IBLOCK_ID" => $arParams["IB"], // id инфоблока
             "NAME" => strip_tags($_REQUEST["name"]), // заголовок
-            "ACTIVE_FROM" => $_POST["date"], //
+            "ACTIVE_FROM" => date('d.m.Y', strtotime($_POST['active_from'])), // дата публикации
             "ACTIVE" => "Y", // активен
             "PREVIEW_PICTURE" => $_FILES["image"],
             "DETAIL_TEXT" => strip_tags($_REQUEST["detail_text"]),
         );
-
-        echo '<pre>';
-        print_r($arLoadProductArray);
-        echo '</pre>';
+//        echo '<pre>';
+//        print_r($_POST);
+//        echo '</pre>';
+//        echo '<pre>';
+//        print_r($arLoadProductArray);
+//        echo '</pre>';
 
         $ELEM = $el->Add($arLoadProductArray);
         if ($ELEM) {
@@ -232,9 +230,6 @@ if (CSite::InDir('/news/add-sect/')) {
     }
     $arResult = $arSections;
 
-//    echo '<pre>';
-//    print_r($_POST);
-//    echo '</pre>';
 
     if ($_POST) {
         $bs = new CIBlockSection;
@@ -244,11 +239,6 @@ if (CSite::InDir('/news/add-sect/')) {
             "IBLOCK_ID" => $arParams["IB"],
             "NAME" => $_POST["name"],
         );
-
-//        echo '<pre>';
-//        print_r($arFields);
-//        echo '</pre>';
-
 
         $section = $bs->Add($arFields);
         if ($section) {

@@ -12,7 +12,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="p-20">
-                            <form class="form-horizontal d-flex flex-column gap-3" role="form" method="POST">
+                            <form class="form-horizontal d-flex flex-column gap-3" role="form" method="POST"
+                                  enctype="multipart/form-data">
 
                                 <div class="form-group row">
                                     <label class="col-2 col-form-label">Заголовок новости</label>
@@ -41,8 +42,7 @@
                                 <div class="form-group row">
                                     <label class="col-2 col-form-label">Дата публикации</label>
                                     <div class="col-10">
-                                        <input type="date" class="form-control" placeholder="Дата публикации"
-                                               name="date" value="">
+                                        <input type="date" class="form-control" name="active_from" value=" ">
                                     </div>
                                 </div>
 
